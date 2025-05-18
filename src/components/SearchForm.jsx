@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function SearchForm({search, setSearch, handleSearch}) {
+export default function SearchForm({ search, setSearch, handleSearch }) {
 
   const inputRef = useRef(null);
 
-  const onSearch= (e) => {
+  const onSearch = (e) => {
     e.preventDefault();
     console.log(e)
     handleSearch(search);
   }
 
   useEffect(() => {
-    if(inputRef.current) {
+    if (inputRef.current) {
       inputRef.current.focus()
     }
   }, []); // empty dependency array to run only once
-    
+
   return (
-    <form onSubmit={onSearch} className="flex items-center" >
+    <form onSubmit={onSearch} className="flex items-center">
       <input
         ref={inputRef}
         type="text"
